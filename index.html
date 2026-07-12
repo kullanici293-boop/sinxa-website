@@ -1,1 +1,465 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SINXA - Next Generation Web3 Ecosystem</title>
+    <!-- Font Awesome İkonları İçin -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Temel Ayarlar ve Renk Paleti */
+        :root {
+            --bg-color: #030303;
+            --gold-primary: #e5b842;
+            --gold-secondary: #b88e2f;
+            --gold-glow: rgba(229, 184, 66, 0.2);
+            --card-bg: rgba(20, 20, 20, 0.6);
+            --border-color: rgba(229, 184, 66, 0.15);
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 30%, rgba(184, 142, 47, 0.1) 0%, transparent 70%);
+        }
+
+        /* Üst Bar */
+        .top-bar {
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        .top-bar span {
+            color: var(--gold-primary);
+            font-weight: bold;
+            border: 1px solid var(--gold-primary);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        /* Navigasyon */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(3, 3, 3, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo-placeholder {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold-primary);
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold-primary);
+        }
+
+        .btn-connect {
+            border: 1px solid var(--gold-primary);
+            background: transparent;
+            color: var(--gold-primary);
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 0 10px var(--gold-glow);
+        }
+
+        .btn-connect:hover {
+            background: var(--gold-primary);
+            color: #000;
+            box-shadow: 0 0 20px rgba(229, 184, 66, 0.5);
+        }
+
+        /* Hero Alanı */
+        .hero {
+            text-align: center;
+            padding: 100px 20px 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero p.welcome {
+            color: var(--gold-primary);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            letter-spacing: 5px;
+            background: linear-gradient(135deg, #fff 30%, var(--gold-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px var(--gold-glow);
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero h2 span {
+            color: var(--gold-primary);
+        }
+
+        .hero p.desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-gold {
+            background: linear-gradient(90deg, var(--gold-secondary), var(--gold-primary));
+            color: #000;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(229, 184, 66, 0.4);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+        }
+
+        /* Sayaç Bölümü */
+        .countdown-container {
+            max-width: 900px;
+            margin: 60px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .countdown-title {
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .time-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px 10px;
+            border-radius: 8px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .time-box::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 8px;
+            box-shadow: 0 0 15px var(--gold-glow);
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .time-box:hover::after {
+            opacity: 1;
+        }
+
+        .time-box min {
+            display: block;
+        }
+
+        .time-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--gold-primary);
+            display: block;
+            margin-bottom: 5px;
+            font-family: monospace;
+        }
+
+        .time-label {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Sosyal Medya İletişim Butonları */
+        .social-section {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .social-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #fff;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-card i {
+            font-size: 2.5rem;
+            color: var(--gold-primary);
+            transition: 0.3s;
+        }
+
+        .social-card h3 {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .social-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 5px 20px var(--gold-glow);
+        }
+
+        .social-card:hover i {
+            transform: scale(1.1);
+            text-shadow: 0 0 10px var(--gold-primary);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Mobil Uyum */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; padding: 20px; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+            nav a { margin: 0 5px; }
+            .hero h1 { font-size: 2.8rem; }
+            .countdown { grid-template-columns: repeat(2, 1fr); }
+            .social-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Üst Duyuru Barı -->
+    <div class="top-bar">
+        🚀 OFFICIAL TOKEN LAUNCH <span id="top-bar-days">5 DAYS LEFT</span>
+    </div>
+
+    <!-- Navigasyon Header -->
+    <header>
+        <div class="logo-placeholder"><!-- Logo es geçildi, şık boşluk bırakıldı --></div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Tokenomics</a>
+            <a href="#">Roadmap</a>
+            <a href="#">Team</a>
+        </nav>
+        <button class="btn-connect">CONNECT WALLET</button>
+    </header>
+
+    <!-- Hero Karşılama Alanı -->
+    <section class="hero">
+        <p class="welcome">Welcome To</p>
+        <h1>SINXA</h1>
+        <h2>The Next Generation <span>Web3 Ecosystem</span></h2>
+        <p class="desc">Community Driven. Innovation Focused. Future Powered. Join the movement today and secure your spot in the next generation financial ecosystem.</p>
+        
+        <div class="hero-buttons">
+            <a href="https://t.me/SINXAOfficial" target="_blank" class="btn-gold">ENTER ECOSYSTEM <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://x.com/sinxaToken" target="_blank" class="btn-outline">JOIN COMMUNITY <i class="fa-solid fa-users"></i></a>
+        </div>
+    </section>
+
+    <!-- Geri Sayım (Sayaç) Alanı -->
+    <section class="countdown-container">
+        <div class="countdown-title">Launch Countdown</div>
+        <div class="countdown">
+            <div class="time-box">
+                <span class="time-number" id="days">05</span>
+                <span class="time-label">Days</span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="hours">00</span>
+                <span class="time-label">Hours</span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="minutes">00</span>
+                <span class="time-label">Minutes</span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="seconds">00</span>
+                <span class="time-label">Seconds</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim & Sosyal Medya Kanalları -->
+    <section class="social-section">
+        <div class="countdown-title" style="margin-bottom: 40px;">Official Channels</div>
+        <div class="social-grid">
+            
+            <!-- X (Twitter) -->
+            <a href="https://x.com/sinxaToken" target="_blank" class="social-card">
+                <i class="fa-brands fa-x-twitter"></i>
+                <h3>X / Twitter</h3>
+                <p>@sinxaToken</p>
+            </a>
+
+            <!-- Telegram -->
+            <a href="https://t.me/SINXAOfficial" target="_blank" class="social-card">
+                <i class="fa-brands fa-telegram"></i>
+                <h3>Telegram</h3>
+                <p>t.me/SINXAOfficial</p>
+            </a>
+
+            <!-- E-posta -->
+            <a href="mailto:team.sinxa@gmail.com" class="social-card">
+                <i class="fa-solid fa-envelope"></i>
+                <h3>Email Support</h3>
+                <p>team.sinxa@gmail.com</p>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Footer Alt Kısım -->
+    <footer>
+        <p>&copy; 2026 SINXA. All Rights Reserved. Made with 💛 for the community.</p>
+    </footer>
+
+    <!-- Sayaç JavaScript Kodu (Tam 5 Günden Geri Sayar) -->
+    <script>
+        // Şu anki zamana tam 5 gün ekleyerek hedef süre oluşturuyoruz
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 5);
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            // Zaman hesaplamaları
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            // Sayıları ekrana basma (Başına sıfır ekleme formatıyla)
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+
+            // Üst bardaki yazıyı da dinamik güncelle
+            document.getElementById('top-bar-days').innerText = `${days} DAYS LEFT`;
+
+            // Süre bittiğinde durdur
+            if (difference < 0) {
+                clearInterval(interval);
+                document.querySelector('.countdown').innerHTML = "<h3 style='color:var(--gold-primary); grid-column: 1/-1;'>LAUNCHED NOW!</h3>";
+            }
+        }
+
+        // Sayacı her saniye güncelle
+        const interval = setInterval(updateCountdown, 1000);
+        updateCountdown(); // İlk açılışta hemen çalışsın diye
+    </script>
+</body>
+</html>
