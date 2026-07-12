@@ -286,3 +286,54 @@ answer = "SINXA is a community-driven Web3 project focused on building a strong 
 chat.innerHTML = "<p>" + answer + "</p>";
 
 }
+function sendAI(){
+
+let question = document.getElementById("aiQuestion").value.toLowerCase();
+
+let chat = document.getElementById("aiChat");
+
+let answer = "";
+
+
+if(question.includes("launch") || question.includes("when")){
+
+answer="🚀 SINXA launch is coming soon. Follow our official channels for updates.";
+
+}
+
+else if(question.includes("telegram")){
+
+answer="Join our Telegram: https://t.me/SINXAOfficial";
+
+}
+
+else if(question.includes("x") || question.includes("twitter")){
+
+answer="Follow us on X: https://x.com/sinxaToken";
+
+}
+
+else if(question.includes("sinxa")){
+
+answer="SINXA is a community-driven Web3 project built around a strong ecosystem and community.";
+
+}
+
+else if(question.includes("email") || question.includes("contact")){
+
+answer="Contact us: team.sinxa@gmail.com";
+
+}
+
+else{
+
+answer="Thanks for your question! Our team will share more details soon. 🚀";
+
+}
+
+
+chat.innerHTML="<p>"+answer+"</p>";
+
+document.getElementById("aiQuestion").value="";
+
+}
