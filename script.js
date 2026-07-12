@@ -194,3 +194,84 @@ coin.style.transform =
 });
 
 }
+// SINXA Assistant
+
+
+const chatButton =
+document.getElementById("chatButton");
+
+
+const chatBox =
+document.getElementById("chatBox");
+
+
+
+chatButton.onclick = ()=>{
+
+if(chatBox.style.display==="block"){
+
+chatBox.style.display="none";
+
+}
+
+else{
+
+chatBox.style.display="block";
+
+}
+
+};
+
+
+
+function botReply(type){
+
+
+const chat =
+document.getElementById("chatContent");
+
+
+let answer="";
+
+
+if(type==="about"){
+
+answer=
+"SINXA is a community-driven Web3 project focused on innovation and long-term growth.";
+
+}
+
+
+
+if(type==="roadmap"){
+
+answer=
+"Our roadmap focuses on community growth, partnerships and building the SINXA ecosystem.";
+
+}
+
+
+
+if(type==="community"){
+
+answer=
+"Join our community on X and Telegram to follow updates.";
+
+}
+
+
+
+if(type==="token"){
+
+answer=
+"SINXA tokenomics and ecosystem details will be shared with the community.";
+
+}
+
+
+
+chat.innerHTML =
+"<p>"+answer+"</p>";
+
+
+}
