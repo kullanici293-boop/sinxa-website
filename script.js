@@ -273,33 +273,51 @@ answer=
 chat.innerHTML =
 "<p>"+answer+"</p>";
 
+// =============================
+// SINXA Launch Countdown
+// =============================
 
-const launchDate = new Date("July 17, 2026 20:00:00").getTime();
+const launchDate = new Date(2026, 6, 17, 20, 0, 0).getTime();
 
-const timer = setInterval(function () {
+function updateCountdown() {
 
-const now = new Date().getTime();
+const countdown = document.querySelector(".countdown");
+
+if(!countdown) return;
+
+const now = Date.now();
+
 const distance = launchDate - now;
 
-if (distance <= 0) {
-clearInterval(timer);
+if(distance <= 0){
 
-document.querySelector(".countdown").innerHTML =
-"<h1 style='color:#FFD700;font-size:48px;text-shadow:0 0 20px gold;'>🚀 SINXA IS NOW LIVE 🚀</h1>";
+countdown.innerHTML = `
+<h1 style="
+color:#FFD700;
+font-size:48px;
+text-align:center;
+text-shadow:0 0 20px gold;">
+🚀 SINXA IS NOW LIVE 🚀
+</h1>`;
 
 return;
+
 }
 
-document.getElementById("days").innerHTML =
+document.getElementById("days").textContent =
 Math.floor(distance / (1000 * 60 * 60 * 24));
 
-document.getElementById("hours").innerHTML =
+document.getElementById("hours").textContent =
 Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-document.getElementById("minutes").innerHTML =
+document.getElementById("minutes").textContent =
 Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-document.getElementById("seconds").innerHTML =
+document.getElementById("seconds").textContent =
 Math.floor((distance % (1000 * 60)) / 1000);
 
-}, 1000);
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
