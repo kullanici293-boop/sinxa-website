@@ -1401,3 +1401,66 @@ transition:.6s;
 left:100%;
 
 }
+.countdown-section{
+
+width:90%;
+max-width:1200px;
+margin:120px auto;
+text-align:center;
+
+}
+
+
+.countdown-section h2{
+
+font-size:60px;
+margin:20px 0 50px;
+
+}
+
+
+.countdown{
+
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+
+}
+
+
+.time-box{
+
+width:170px;
+height:140px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(212,175,55,.4);
+
+border-radius:30px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+}
+
+
+.time-box span{
+
+font-size:55px;
+font-weight:900;
+color:#d4af37;
+
+}
+
+
+.time-box p{
+
+color:#888;
+letter-spacing:3px;
+
+}
+
