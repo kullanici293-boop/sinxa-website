@@ -1720,3 +1720,52 @@ transform:translateY(-3px);
 box-shadow:0 10px 30px rgba(212,175,55,.25);
 
 }
+/* AI INPUT */
+
+.ai-input{
+
+display:flex;
+
+gap:10px;
+
+padding:15px;
+
+border-top:1px solid rgba(255,255,255,.1);
+
+}
+
+
+.ai-input input{
+
+flex:1;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(212,175,55,.3);
+
+border-radius:20px;
+
+padding:12px 15px;
+
+color:white;
+
+outline:none;
+
+}
+
+
+.ai-input button{
+
+width:45px;
+
+border:none;
+
+border-radius:50%;
+
+background:#d4af37;
+
+cursor:pointer;
+
+font-size:18px;
+
+}
