@@ -6,128 +6,35 @@
 
 <title>SINXA</title>
 
-<style>
+<link rel="stylesheet" href="style.css">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-body{
-
-background:#090909;
-color:white;
-
-}
-
-header{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px 10%;
-
-}
-
-.logo{
-
-font-size:32px;
-font-weight:bold;
-color:#d4af37;
-
-}
-
-nav a{
-
-color:white;
-text-decoration:none;
-margin-left:25px;
-transition:.3s;
-
-}
-
-nav a:hover{
-
-color:#d4af37;
-
-}
-
-.hero{
-
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-
-}
-
-.hero h1{
-
-font-size:72px;
-color:#d4af37;
-
-}
-
-.hero p{
-
-font-size:22px;
-margin-top:20px;
-color:#ddd;
-max-width:700px;
-
-}
-
-.buttons{
-
-margin-top:40px;
-
-}
-
-.btn{
-
-display:inline-block;
-padding:16px 38px;
-margin:10px;
-background:#d4af37;
-color:black;
-text-decoration:none;
-font-weight:bold;
-border-radius:50px;
-transition:.3s;
-
-}
-
-.btn:hover{
-
-transform:translateY(-3px);
-
-}
-
-</style>
+<script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
+<div class="background"></div>
+
 <header>
 
 <div class="logo">
-SINXA
+
+<img src="logo.png" alt="SINXA Logo">
+
+<h2>SINXA</h2>
+
 </div>
 
 <nav>
 
 <a href="#">Home</a>
-
 <a href="#">About</a>
-
+<a href="#">Token</a>
 <a href="#">Roadmap</a>
-
 <a href="#">Community</a>
 
 </nav>
@@ -136,32 +43,87 @@ SINXA
 
 <section class="hero">
 
-<h1>SINXA</h1>
+<div class="hero-left">
+
+<h1>The Future of Web3 Starts With SINXA</h1>
 
 <p>
 
-Building the Future of Web3
+A next-generation decentralized ecosystem built for speed, security and community.
 
 </p>
 
 <div class="buttons">
 
-<a href="https://t.me/SINXAOfficial" class="btn">
+<a href="#" class="buy">Buy Now</a>
 
-Join Telegram
+<a href="#" class="whitepaper">Whitepaper</a>
 
-</a>
+</div>
 
-<a href="https://x.com/sinxaToken" class="btn">
+</div>
 
-Follow on X
+<div class="hero-right">
 
-</a>
+<img src="logo.png" class="coin">
 
 </div>
 
 </section>
 
-</body>
+<section class="cards">
 
+<div class="card">
+
+<h3>Total Supply</h3>
+
+<p>1,000,000,000</p>
+
+</div>
+
+<div class="card">
+
+<h3>Tax</h3>
+
+<p>0%</p>
+
+</div>
+
+<div class="card">
+
+<h3>Chain</h3>
+
+<p>Ethereum</p>
+
+</div>
+
+</section>
+
+<section class="roadmap">
+
+<h2>Roadmap</h2>
+
+<div class="road">
+
+<div>Launch</div>
+
+<div>Community</div>
+
+<div>CEX Listing</div>
+
+<div>Global Expansion</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 SINXA. All Rights Reserved.</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
 </html>
