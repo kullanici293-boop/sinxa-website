@@ -226,3 +226,63 @@ document.getElementById("seconds").innerHTML = seconds;
 
 
 },1000);
+// SINXA AI ASSISTANT
+
+function toggleAI(){
+
+let box = document.getElementById("aiBox");
+
+if(box.style.display === "block"){
+
+box.style.display = "none";
+
+}else{
+
+box.style.display = "block";
+
+}
+
+}
+
+
+
+function askAI(question){
+
+let chat = document.getElementById("aiChat");
+
+
+let answer = "";
+
+
+if(question === "launch"){
+
+answer = "🚀 SINXA launch is coming soon. Stay tuned for official updates.";
+
+}
+
+
+if(question === "telegram"){
+
+answer = "Join our official Telegram community: https://t.me/SINXAOfficial";
+
+}
+
+
+if(question === "x"){
+
+answer = "Follow SINXA on X: https://x.com/sinxaToken";
+
+}
+
+
+if(question === "about"){
+
+answer = "SINXA is a community-driven Web3 project focused on building a strong ecosystem.";
+
+}
+
+
+
+chat.innerHTML = "<p>" + answer + "</p>";
+
+}
