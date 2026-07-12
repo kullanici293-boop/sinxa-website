@@ -192,3 +192,37 @@ document.getElementById("seconds").innerHTML = seconds;
 
 
 },1000);
+let launchTime = localStorage.getItem("sinxaLaunchTime");
+
+if(!launchTime){
+
+launchTime = new Date().getTime() + (5 * 24 * 60 * 60 * 1000);
+
+localStorage.setItem("sinxaLaunchTime", launchTime);
+
+}
+
+
+setInterval(()=>{
+
+let now = new Date().getTime();
+
+let distance = launchTime - now;
+
+
+let days = Math.floor(distance / (1000*60*60*24));
+
+let hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+
+let minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+
+let seconds = Math.floor((distance % (1000*60))/1000);
+
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+
+
+},1000);
