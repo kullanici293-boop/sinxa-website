@@ -416,4 +416,758 @@ transform:scale(1);
 }
 
 
+}/* =========================
+   SECTION GENERAL
+========================= */
+
+
+section {
+
+    width:90%;
+    max-width:1200px;
+
+    margin:100px auto;
+
+}
+
+
+section h2 {
+
+    text-align:center;
+
+    font-size:40px;
+
+    margin-bottom:50px;
+
+    color:#ffd000;
+
+}
+
+
+
+
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+
+.about {
+
+    text-align:center;
+
+}
+
+
+.about p {
+
+    max-width:800px;
+
+    margin:auto;
+
+    color:#cfcfcf;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   TOKEN SECTION
+========================= */
+
+
+.cards {
+
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:25px;
+
+
+}
+
+
+
+
+.card {
+
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,208,0,.4);
+
+
+    padding:35px 20px;
+
+
+    text-align:center;
+
+
+    border-radius:20px;
+
+
+    backdrop-filter:blur(10px);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+.card:hover {
+
+
+    transform:translateY(-10px);
+
+
+    box-shadow:
+    0 0 30px rgba(255,208,0,.5);
+
+
+}
+
+
+
+.card h3 {
+
+
+    color:#ffd000;
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+
+}
+
+
+
+.card p {
+
+
+    font-size:18px;
+
+    color:white;
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   ROADMAP
+========================= */
+
+
+.road-container {
+
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:25px;
+
+
+}
+
+
+
+
+
+.road-card {
+
+
+    padding:30px;
+
+
+    border-radius:20px;
+
+
+    background:
+    linear-gradient(
+    145deg,
+    rgba(255,208,0,.15),
+    rgba(255,255,255,.03)
+    );
+
+
+    border:1px solid #ffd000;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.road-card:hover {
+
+
+    transform:scale(1.05);
+
+
+}
+
+
+
+
+.road-card h3 {
+
+
+    color:#ffd000;
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+
+}
+
+
+
+.road-card p {
+
+
+    color:#ddd;
+
+    line-height:1.6;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   COMMUNITY
+========================= */
+
+
+.community {
+
+
+    text-align:center;
+
+
+}
+
+
+
+.community p {
+
+
+    color:#ccc;
+
+    font-size:18px;
+
+}
+
+
+
+.socials {
+
+
+    margin-top:35px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+
+}
+
+
+
+
+
+.socials a {
+
+
+    text-decoration:none;
+
+
+    color:black;
+
+
+    background:#ffd000;
+
+
+    padding:15px 35px;
+
+
+    border-radius:30px;
+
+
+    font-weight:bold;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.socials a:hover {
+
+
+    box-shadow:
+    0 0 30px #ffd000;
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+
+
+footer {
+
+
+    width:90%;
+
+    margin:80px auto 30px;
+
+
+    padding-top:30px;
+
+
+    border-top:1px solid rgba(255,255,255,.2);
+
+
+    text-align:center;
+
+
+    color:#aaa;
+
+
+}
+
+
+
+
+
+footer img {
+
+
+    width:80px;
+
+    margin-bottom:20px;
+
+
+}
+/* =========================
+   ANIMATION EFFECTS
+========================= */
+
+
+.card,
+.road-card,
+.hero-text,
+.hero-logo {
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+
+@media(max-width:1000px){
+
+
+header {
+
+    width:95%;
+
+}
+
+
+
+nav {
+
+    display:none;
+
+}
+
+
+
+.hero {
+
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding-top:50px;
+
+}
+
+
+
+.hero h1 {
+
+
+    font-size:42px;
+
+}
+
+
+
+.hero p {
+
+    font-size:16px;
+
+}
+
+
+
+.hero-logo {
+
+
+    margin-top:50px;
+
+    width:260px;
+
+    height:260px;
+
+
+}
+
+
+
+.cards {
+
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+
+}
+
+
+
+.road-container {
+
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+
+}
+
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+header {
+
+
+    height:80px;
+
+}
+
+
+
+.logo {
+
+
+    font-size:18px;
+
+}
+
+
+
+.connect {
+
+
+    padding:10px 18px;
+
+    font-size:12px;
+
+}
+
+
+
+
+.hero h1 {
+
+
+    font-size:34px;
+
+
+}
+
+
+
+.buttons {
+
+
+    flex-direction:column;
+
+
+}
+
+
+
+.main-btn,
+.second-btn {
+
+
+    width:100%;
+
+
+}
+
+
+
+
+section h2 {
+
+
+    font-size:32px;
+
+
+}
+
+
+
+.cards {
+
+
+    grid-template-columns:
+    1fr;
+
+
+}
+
+
+
+.road-container {
+
+
+    grid-template-columns:
+    1fr;
+
+
+}
+
+
+
+.socials {
+
+
+    flex-direction:column;
+
+}
+
+
+
+.socials a {
+
+
+    width:100%;
+
+}
+
+
+
+}
+
+
+
+
+
+/* =========================
+   GLOW EFFECTS
+========================= */
+
+
+::selection {
+
+
+    background:#ffd000;
+
+    color:black;
+
+
+}
+
+
+
+::-webkit-scrollbar {
+
+
+    width:8px;
+
+
+}
+
+
+
+::-webkit-scrollbar-track {
+
+
+    background:#050505;
+
+
+}
+
+
+
+::-webkit-scrollbar-thumb {
+
+
+    background:#ffd000;
+
+    border-radius:20px;
+
+
+}
+
+
+
+
+
+/* Floating effect */
+
+
+.hero-logo {
+
+
+    position:relative;
+
+}
+
+
+
+.hero-logo::before {
+
+
+    content:"";
+
+    position:absolute;
+
+    inset:-15px;
+
+
+    border-radius:50%;
+
+
+    border:1px solid #ffd000;
+
+
+    opacity:.5;
+
+
+    animation:rotate 8s linear infinite;
+
+
+}
+
+
+
+@keyframes rotate {
+
+
+from {
+
+transform:rotate(0deg);
+
+}
+
+
+to {
+
+transform:rotate(360deg);
+
+}
+
+
 }
