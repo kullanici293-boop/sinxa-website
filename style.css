@@ -1078,4 +1078,96 @@ background:#ffc400;
 
 color:black;
 
+}.countdown-section{
+padding:90px 20px;
+text-align:center;
+}
+
+.countdown-section h2{
+font-size:44px;
+font-weight:800;
+color:#FFD700;
+margin-bottom:12px;
+text-shadow:0 0 18px rgba(255,215,0,.8);
+}
+
+.countdown-text{
+color:#bfbfbf;
+font-size:18px;
+margin-bottom:40px;
+}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+margin-bottom:40px;
+}
+
+.time-box{
+width:150px;
+height:150px;
+background:rgba(255,215,0,.06);
+border:2px solid #FFD700;
+border-radius:22px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+transition:.3s;
+box-shadow:0 0 20px rgba(255,215,0,.25);
+}
+
+.time-box:hover{
+transform:translateY(-8px);
+box-shadow:0 0 35px gold;
+}
+
+.time-box span{
+font-size:50px;
+font-weight:900;
+color:#FFD700;
+}
+
+.time-box p{
+margin-top:10px;
+font-size:14px;
+letter-spacing:2px;
+color:#fff;
+text-transform:uppercase;
+}
+
+.launch-btn{
+display:inline-block;
+padding:16px 38px;
+background:#FFD700;
+color:#111;
+font-weight:700;
+border-radius:50px;
+text-decoration:none;
+transition:.3s;
+box-shadow:0 0 25px rgba(255,215,0,.5);
+}
+
+.launch-btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 40px gold;
+}
+
+@media(max-width:768px){
+
+.time-box{
+width:120px;
+height:120px;
+}
+
+.time-box span{
+font-size:38px;
+}
+
+.countdown-section h2{
+font-size:34px;
+}
+
 }
