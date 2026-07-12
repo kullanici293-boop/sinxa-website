@@ -274,4 +274,32 @@ chat.innerHTML =
 "<p>"+answer+"</p>";
 
 
+const launchDate = new Date("July 17, 2026 20:00:00").getTime();
+
+const timer = setInterval(function () {
+
+const now = new Date().getTime();
+const distance = launchDate - now;
+
+if (distance <= 0) {
+clearInterval(timer);
+
+document.querySelector(".countdown").innerHTML =
+"<h1 style='color:#FFD700;font-size:48px;text-shadow:0 0 20px gold;'>🚀 SINXA IS NOW LIVE 🚀</h1>";
+
+return;
 }
+
+document.getElementById("days").innerHTML =
+Math.floor(distance / (1000 * 60 * 60 * 24));
+
+document.getElementById("hours").innerHTML =
+Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+document.getElementById("minutes").innerHTML =
+Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+document.getElementById("seconds").innerHTML =
+Math.floor((distance % (1000 * 60)) / 1000);
+
+}, 1000);
