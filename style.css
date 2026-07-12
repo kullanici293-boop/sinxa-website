@@ -1908,3 +1908,68 @@ color:#ccc;
 line-height:1.7;
 
 }
+
+/* JOIN SINXA */
+
+.join-section{
+
+width:90%;
+
+max-width:700px;
+
+margin:120px auto;
+
+text-align:center;
+
+}
+
+
+.join-box{
+
+padding:40px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(212,175,55,.3);
+
+border-radius:35px;
+
+backdrop-filter:blur(20px);
+
+}
+
+
+.join-box input{
+
+width:80%;
+
+padding:15px;
+
+border-radius:25px;
+
+border:1px solid rgba(212,175,55,.4);
+
+background:#111;
+
+color:white;
+
+margin:20px;
+
+}
+
+
+.join-box button{
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:30px;
+
+background:#d4af37;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
