@@ -1,44 +1,46 @@
-// SINXA Website Animations
+// SINXA Web3 Animations
 
 
-// Scroll reveal effect
+// Scroll reveal animation
 
-const sections = document.querySelectorAll(".section, .hero-content, .hero-card");
-
-
-const reveal = () => {
-
-    sections.forEach(section => {
-
-        const position = section.getBoundingClientRect().top;
-
-        const screenHeight = window.innerHeight;
+const elements = document.querySelectorAll(
+".section, .hero-content, .hero-coin"
+);
 
 
-        if(position < screenHeight - 100){
+elements.forEach(el => {
 
-            section.style.opacity = "1";
-            section.style.transform = "translateY(0)";
-
-        }
-
-    });
-
-};
-
-
-
-sections.forEach(section => {
-
-    section.style.opacity = "0";
-    section.style.transform = "translateY(50px)";
-    section.style.transition = "all 0.8s ease";
+    el.style.opacity = "0";
+    el.style.transform = "translateY(40px)";
+    el.style.transition = "all 0.8s ease";
 
 });
 
 
 
-window.addEventListener("scroll", reveal);
+function reveal(){
+
+    elements.forEach(el=>{
+
+        let position = el.getBoundingClientRect().top;
+
+        let screen = window.innerHeight;
+
+
+        if(position < screen - 100){
+
+            el.style.opacity="1";
+            el.style.transform="translateY(0)";
+
+        }
+
+
+    });
+
+}
+
+
+window.addEventListener("scroll",reveal);
 
 reveal();
 
@@ -46,21 +48,76 @@ reveal();
 
 
 
-// Background glow movement
+
+// Connect Wallet simulation
 
 
-const glow = document.querySelector(".background-glow");
+const walletButtons = document.querySelectorAll(
+"#connectWallet, #heroWallet"
+);
 
 
-document.addEventListener("mousemove", (e)=>{
+
+walletButtons.forEach(button=>{
 
 
-    let x = e.clientX / window.innerWidth;
-    let y = e.clientY / window.innerHeight;
+button.addEventListener("click",()=>{
 
 
-    glow.style.transform = 
-    `translate(${x * 80}px, ${y * 80}px)`;
+button.innerHTML="Connecting...";
+
+
+setTimeout(()=>{
+
+
+button.innerHTML="Wallet Connected ✓";
+
+
+button.style.background="#00ff88";
+
+
+alert(
+"🚀 SINXA Web3 Wallet\n\nWallet connection will be available soon."
+);
+
+
+},1500);
+
+
+
+});
+
+
+});
+
+
+
+
+
+
+// Mouse glow movement
+
+
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+
+const x = e.clientX / window.innerWidth;
+
+const y = e.clientY / window.innerHeight;
+
+
+document.body.style.setProperty(
+"--mouse-x",
+x
+);
+
+
+document.body.style.setProperty(
+"--mouse-y",
+y
+);
 
 
 });
@@ -69,27 +126,71 @@ document.addEventListener("mousemove", (e)=>{
 
 
 
-// Button hover effect
 
 
-const buttons = document.querySelectorAll("a, button");
+// Button animation
 
 
-buttons.forEach(button => {
+const buttons=document.querySelectorAll(
+"button, a"
+);
 
 
-button.addEventListener("mouseenter",()=>{
 
-    button.style.transform="scale(1.05)";
+buttons.forEach(btn=>{
+
+
+btn.addEventListener(
+"mouseenter",
+()=>{
+
+btn.style.transform="scale(1.05)";
+
+});
+
+
+btn.addEventListener(
+"mouseleave",
+()=>{
+
+btn.style.transform="scale(1)";
 
 });
 
 
-button.addEventListener("mouseleave",()=>{
-
-    button.style.transform="scale(1)";
-
 });
 
 
+
+
+
+
+// Floating coin effect
+
+
+const coin=document.querySelector(".hero-coin");
+
+
+if(coin){
+
+
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+
+let moveX =
+(e.clientX-window.innerWidth/2)/50;
+
+
+let moveY =
+(e.clientY-window.innerHeight/2)/50;
+
+
+coin.style.transform =
+`translate(${moveX}px,${moveY}px)`;
+
+
 });
+
+}
