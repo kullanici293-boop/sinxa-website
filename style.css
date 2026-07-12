@@ -1769,3 +1769,64 @@ cursor:pointer;
 font-size:18px;
 
 }
+/* CONTACT EMAIL PREMIUM */
+
+.contact-email{
+
+margin:80px auto;
+
+max-width:500px;
+
+text-align:center;
+
+padding:35px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(212,175,55,.35);
+
+border-radius:30px;
+
+backdrop-filter:blur(15px);
+
+}
+
+
+.contact-email h3{
+
+color:#d4af37;
+
+font-size:24px;
+
+margin-bottom:15px;
+
+}
+
+
+.contact-email p{
+
+color:#ccc;
+
+margin-bottom:15px;
+
+}
+
+
+.contact-email a{
+
+color:white;
+
+font-size:18px;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+
+.contact-email a:hover{
+
+color:#d4af37;
+
+}
