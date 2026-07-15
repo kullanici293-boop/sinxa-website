@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SINXA - Next-Gen Crypto Ecosystem</title>
+    <title>SINXA - Next-Gen Solana Meme Ecosystem</title>
     <!-- Font Awesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@
             justify-content: center;
             align-items: center;
             animation: fadeOutLoader 1.5s ease-in-out forwards;
-            animation-delay: 3s;
+            animation-delay: 2.5s;
         }
 
         .intro-text {
@@ -59,7 +59,7 @@
             -webkit-text-fill-color: transparent;
             opacity: 0;
             transform: scale(0.8);
-            animation: introTextAnim 2.5s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+            animation: introTextAnim 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
         }
 
         .intro-subtitle {
@@ -71,7 +71,7 @@
             margin-top: 15px;
             opacity: 0;
             animation: fadeIn 1.5s ease-in-out forwards;
-            animation-delay: 1.2s;
+            animation-delay: 1s;
         }
 
         @keyframes introTextAnim {
@@ -114,26 +114,27 @@
             z-index: 2;
             opacity: 0;
             animation: fadeIn 1s ease-in-out forwards;
-            animation-delay: 3.8s;
+            animation-delay: 3.2s;
         }
 
         /* Top Announcement Bar */
         .top-bar {
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(229, 184, 66, 0.1);
             border-bottom: 1px solid var(--glass-border);
             padding: 12px 0;
             text-align: center;
             font-size: 0.85rem;
             letter-spacing: 2px;
-            font-weight: 500;
+            font-weight: 600;
         }
         .top-bar span {
-            color: var(--gold-primary);
-            border: 1px solid var(--gold-primary);
+            color: #00ff66;
+            border: 1px solid #00ff66;
             padding: 2px 10px;
             border-radius: 4px;
             margin-left: 10px;
-            box-shadow: 0 0 10px var(--gold-glow);
+            box-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
+            font-size: 0.75rem;
         }
 
         /* Header */
@@ -186,7 +187,7 @@
         /* Hero Section */
         .hero {
             text-align: center;
-            padding: 100px 20px 40px 20px;
+            padding: 80px 20px 40px 20px;
             max-width: 950px;
             margin: 0 auto;
             position: relative;
@@ -194,16 +195,17 @@
 
         /* Contract Area */
         .contract-wrapper {
-            max-width: 550px;
-            margin: 25px auto 0 auto;
-            padding: 14px 20px;
+            max-width: 650px;
+            margin: 35px auto 0 auto;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 1px;
             cursor: pointer;
             transition: 0.3s;
+            position: relative;
         }
         .contract-wrapper:hover {
             border-color: var(--gold-primary);
@@ -212,11 +214,24 @@
         .contract-title {
             color: #a0a0a0;
             font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .contract-value {
             color: var(--gold-primary);
             font-weight: 600;
             font-family: monospace;
+            word-break: break-all;
+            margin: 0 10px;
+        }
+        .copy-badge {
+            background: rgba(229, 184, 66, 0.15);
+            color: var(--gold-primary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
         }
 
         /* Motif Decoration */
@@ -337,44 +352,6 @@
             border-color: var(--gold-primary);
             color: var(--gold-primary);
             box-shadow: 0 0 15px var(--gold-glow);
-        }
-
-        /* Countdown Area */
-        .countdown-container {
-            max-width: 950px;
-            margin: 40px auto 80px auto;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .countdown {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-
-        .time-box {
-            padding: 35px 15px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .time-number {
-            font-size: 3.8rem;
-            font-weight: 700;
-            color: var(--gold-primary);
-            display: block;
-            font-family: 'Cinzel', serif;
-            text-shadow: 0 0 15px rgba(229, 184, 66, 0.3);
-        }
-
-        .time-label {
-            color: #a0a0a0;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 5px;
-            display: block;
         }
 
         /* Core Values Section */
@@ -705,6 +682,29 @@
         }
         .ai-input-area button:hover { color: #ffffff; }
 
+        /* Notification Toast for Copying CA */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(229, 184, 66, 0.95);
+            color: #000000;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(229, 184, 66, 0.4);
+            z-index: 10000;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
         /* Footer */
         footer {
             margin-top: 100px;
@@ -726,16 +726,18 @@
             header { padding: 20px; }
             nav a { margin: 5px 10px; font-size: 0.75rem; letter-spacing: 1px; }
             .hero h1 { font-size: 3.2rem; letter-spacing: 6px; }
-            .countdown { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-            .time-number { font-size: 2.8rem; }
             .about-grid { grid-template-columns: 1fr; }
             .tokenomics-grid { grid-template-columns: 1fr; }
             .social-grid { grid-template-columns: 1fr; }
             .ai-panel { width: calc(100% - 40px); right: 20px; left: 20px; bottom: 110px; }
+            .contract-wrapper { flex-direction: column; gap: 10px; text-align: center; }
         }
     </style>
 </head>
 <body>
+
+    <!-- Toast Notification for CA -->
+    <div class="toast" id="copyToast">⚜️ CONTRACT ADDRESS COPIED TO CLIPBOARD!</div>
 
     <!-- Intro Welcome Screen -->
     <div class="intro-loader">
@@ -750,7 +752,7 @@
     <div class="container">
         <!-- Top Announcement Bar -->
         <div class="top-bar">
-            ⚜️ DECENTRALIZED TOKEN LAUNCH CAMPAIGN <span id="top-bar-days">5 DAYS LEFT</span>
+            ⚜️ SINXA IS OFFICIALLY LIVE ON PUMP.FUN <span>ACTIVE NOW</span>
         </div>
 
         <!-- Header -->
@@ -776,47 +778,20 @@
                 <div class="motif-line reverse"></div>
             </div>
 
-            <h2>The Next Generation <span>Web3 Token Launch</span></h2>
-            <p class="desc">We are unleashing a premier decentralized utility coin backed by ironclad smart contracts, pristine blockchain transparency, and an unshakable commitment to community growth. We are not just creating a digital asset; we are forging a borderless financial standard rooted in absolute trust.</p>
+            <h2>The Next Generation <span>Solana Meme Token</span></h2>
+            <p class="desc">A community-driven meme token built on Solana with a vision for long-term growth, pristine blockchain transparency, and an active family. We don't just launch coins; we build decentralized ecosystems based on absolute trust and shared success.</p>
             
             <div class="hero-buttons">
-                <a href="https://t.me/SINXAOfficial" target="_blank" class="btn-gold">ENTER ECOSYSTEM <i class="fa-solid fa-bolt"></i></a>
-                <a href="https://x.com/sinxaToken" target="_blank" class="btn-outline">JOIN COMMUNITY <i class="fa-solid fa-users"></i></a>
-                <a href="#" class="btn-outline" onclick="alert('Whitepaper & Audit reports will be released transparently alongside the contract distribution.'); return false;">READ WHITEPAPER <i class="fa-solid fa-file-lines"></i></a>
+                <a href="https://pump.fun/coin/GoJzbzRYesEShx2kQhDxqq44huiieAz2P9wqoywhpump" target="_blank" class="btn-gold">BUY ON PUMP.FUN <i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="https://t.me/SINXAOfficial" target="_blank" class="btn-outline">JOIN TELEGRAM <i class="fa-solid fa-paper-plane"></i></a>
+                <a href="https://x.com/sinxaToken" target="_blank" class="btn-outline">FOLLOW X <i class="fa-brands fa-x-twitter"></i></a>
             </div>
 
-            <!-- Smart Contract Address Preview (Launch Hype) -->
-            <div class="contract-wrapper glass-card" onclick="copyContractMock()">
-                <span class="contract-title"><i class="fa-solid fa-code"></i> Contract Address:</span>
-                <span class="contract-value" id="contractNode">VERIFIED SOON ON LAUNCH</span>
-            </div>
-        </section>
-
-        <!-- Countdown Section -->
-        <section class="countdown-container" id="countdown">
-            <div class="motif-divider">
-                <div class="motif-line" style="width: 50px;"></div>
-                <span style="font-family:'Cinzel', serif; color: var(--gold-primary); letter-spacing: 3px; font-size: 1.1rem; text-transform: uppercase;">Launch Countdown</span>
-                <div class="motif-line reverse" style="width: 50px;"></div>
-            </div>
-            
-            <div class="countdown">
-                <div class="time-box glass-card">
-                    <span class="time-number" id="days">05</span>
-                    <span class="time-label">Days</span>
-                </div>
-                <div class="time-box glass-card">
-                    <span class="time-number" id="hours">00</span>
-                    <span class="time-label">Hours</span>
-                </div>
-                <div class="time-box glass-card">
-                    <span class="time-number" id="minutes">00</span>
-                    <span class="time-label">Minutes</span>
-                </div>
-                <div class="time-box glass-card">
-                    <span class="time-number" id="seconds">00</span>
-                    <span class="time-label">Seconds</span>
-                </div>
+            <!-- Smart Contract Address (Copyable CA) -->
+            <div class="contract-wrapper glass-card" onclick="copyContractAddress()">
+                <span class="contract-title"><i class="fa-solid fa-shield-halved"></i> Official Solana CA:</span>
+                <span class="contract-value" id="contractNode">GoJzbzRYesEShx2kQhDxqq44huiieAz2P9wqoywhpump</span>
+                <span class="copy-badge"><i class="fa-regular fa-copy"></i> Copy</span>
             </div>
         </section>
 
@@ -827,13 +802,13 @@
                 <!-- Transparency & Trust -->
                 <div class="about-card glass-card">
                     <h3><i class="fa-solid fa-shield-halved"></i> 100% TRANSPARENCY & TRUST</h3>
-                    <p>Trust is our foundational pillar. Every transaction, smart contract utility, and token allocation will be permanently recorded on the immutable ledger. Our code will be fully open-source, ensuring complete transparency for all early adopters and family members from day one.</p>
+                    <p>Trust is our foundational pillar. SINXA operates with total on-chain transparency. With a fair launch structure on Pump.fun and an open ecosystem, we assure our community that security, fairness, and safety are embedded into our digital core.</p>
                 </div>
 
                 <!-- Strategic Vision -->
                 <div class="about-card glass-card">
                     <h3><i class="fa-solid fa-rocket"></i> ECOSYSTEM VISION</h3>
-                    <p>SINXA aims to lead the upcoming Web3 migration by creating high-velocity utility inside decentralized finance. By merging cutting-edge protocol design with real-world accessibility, we are building a long-term economic standard for global markets.</p>
+                    <p>SINXA bridges high-speed decentralized finance on Solana with real-world accessibility. By prioritizing clean token structure and community initiative, we aim to transition from a dynamic utility token to a long-term decentralized financial standard.</p>
                 </div>
 
                 <!-- Global Crypto Family Manifesto -->
@@ -856,24 +831,24 @@
             </div>
             <div class="tokenomics-grid">
                 <div class="token-metric-card glass-card">
-                    <div class="metric-percentage">50%</div>
-                    <div class="metric-title">Public Sale</div>
-                    <div class="metric-desc">Fair distribution allocation allocated completely for the global community.</div>
+                    <div class="metric-percentage">100%</div>
+                    <div class="metric-title">Fair Launch</div>
+                    <div class="metric-desc">Fair distribution on Solana's premier launchpad with absolutely zero developer pre-allocations.</div>
                 </div>
                 <div class="token-metric-card glass-card">
-                    <div class="metric-percentage">25%</div>
-                    <div class="metric-title">Liquidity Pool</div>
-                    <div class="metric-desc">Locked securely at launch to ensure smooth, high-velocity trading stability.</div>
+                    <div class="metric-percentage">0%</div>
+                    <div class="metric-title">Tax</div>
+                    <div class="metric-desc">Absolutely no buy or sell taxes. What you trade is exactly what you get. Free on-chain speed.</div>
                 </div>
                 <div class="token-metric-card glass-card">
-                    <div class="metric-percentage">15%</div>
-                    <div class="metric-title">Ecosystem Rewards</div>
-                    <div class="metric-desc">Dedicated strictly for staking bonuses and community distributions.</div>
+                    <div class="metric-percentage">100%</div>
+                    <div class="metric-title">Solana Built</div>
+                    <div class="metric-desc">Engineered on high-throughput, low-gas blockchain network for rapid global transaction scaling.</div>
                 </div>
                 <div class="token-metric-card glass-card">
-                    <div class="metric-percentage">10%</div>
-                    <div class="metric-title">Marketing & Dev</div>
-                    <div class="metric-desc">Fueling global ecosystem growth campaigns and continuous protocol updates.</div>
+                    <div class="metric-percentage">🚀</div>
+                    <div class="metric-title">Organic Growth</div>
+                    <div class="metric-desc">Fueling global ecosystem growth campaigns through relentless community power.</div>
                 </div>
             </div>
         </section>
@@ -888,29 +863,29 @@
             <div class="roadmap-grid">
                 <div class="roadmap-card glass-card">
                     <div class="roadmap-phase">Phase 01</div>
-                    <div class="roadmap-title">Genesis & Trust</div>
+                    <div class="roadmap-title">Genesis Launch</div>
                     <ul class="roadmap-list">
-                        <li><i class="fa-solid fa-check"></i> Smart Contract Engineering</li>
-                        <li><i class="fa-solid fa-check"></i> Global Family Onboarding</li>
-                        <li><i class="fa-solid fa-circle-notch fa-spin"></i> Transparency Audit Check</li>
+                        <li><i class="fa-solid fa-check"></i> Pump.fun Fair Deployment</li>
+                        <li><i class="fa-solid fa-check"></i> Launch of Upgraded Website</li>
+                        <li><i class="fa-solid fa-circle-notch fa-spin"></i> Onboarding First Believers</li>
                     </ul>
                 </div>
                 <div class="roadmap-card glass-card">
                     <div class="roadmap-phase">Phase 02</div>
-                    <div class="roadmap-title">The Grand Launch</div>
+                    <div class="roadmap-title">Growth Storm</div>
                     <ul class="roadmap-list">
-                        <li><i class="fa-solid fa-hourglass-start"></i> Decentralized Fair Launch</li>
-                        <li><i class="fa-solid fa-hourglass-start"></i> Liquidity Lock Enforcement</li>
-                        <li><i class="fa-solid fa-hourglass-start"></i> Global Marketing Blitz</li>
+                        <li><i class="fa-solid fa-hourglass-start"></i> Raydium Liquidity Pool Migration</li>
+                        <li><i class="fa-solid fa-hourglass-start"></i> Global Telegram & X Campaigns</li>
+                        <li><i class="fa-solid fa-hourglass-start"></i> Dexscreener/Dextools Customization</li>
                     </ul>
                 </div>
                 <div class="roadmap-card glass-card">
                     <div class="roadmap-phase">Phase 03</div>
-                    <div class="roadmap-title">Ecosystem Growth</div>
+                    <div class="roadmap-title">Ecosystem Expansion</div>
                     <ul class="roadmap-list">
-                        <li><i class="fa-solid fa-hourglass-start"></i> Staking Protocol Activation</li>
-                        <li><i class="fa-solid fa-hourglass-start"></i> Major Tier CEX Listings</li>
-                        <li><i class="fa-solid fa-hourglass-start"></i> Cross-Chain Expansion</li>
+                        <li><i class="fa-solid fa-hourglass-start"></i> Strategic Community Partnerships</li>
+                        <li><i class="fa-solid fa-hourglass-start"></i> Global Marketing Blitz Expansion</li>
+                        <li><i class="fa-solid fa-hourglass-start"></i> Long-term Utility Integrations</li>
                     </ul>
                 </div>
             </div>
@@ -935,10 +910,10 @@
                     <h3>Telegram</h3>
                     <p>t.me/SINXAOfficial</p>
                 </a>
-                <a href="mailto:team.sinxa@gmail.com" class="social-card glass-card">
-                    <i class="fa-solid fa-envelope"></i>
-                    <h3>Email Support</h3>
-                    <p>team.sinxa@gmail.com</p>
+                <a href="https://pump.fun/coin/GoJzbzRYesEShx2kQhDxqq44huiieAz2P9wqoywhpump" target="_blank" class="social-card glass-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Pump.fun</h3>
+                    <p>Buy & View Chart</p>
                 </a>
             </div>
         </section>
@@ -959,7 +934,7 @@
             </div>
             <div class="ai-body">
                 <div class="ai-bubble">
-                    Greetings! 🌟 Welcome to the global SINXA family. Feel free to ask me anything about our decentralized token metrics, smart contract security, or our upcoming official launch campaign!
+                    Greetings! 🌟 We are officially live on Pump.fun! Ask me anything about our token mechanics, official Solana CA, or roadmap integrations. Let's send SINXA to the moon! 🚀
                 </div>
             </div>
             <div class="ai-input-area">
@@ -970,7 +945,7 @@
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2026 SINXA. All Rights Reserved. Built for the global community family with full on-chain transparency.</p>
+            <p>&copy; 2026 SINXA. All Rights Reserved. Built on Solana for the global community family with full on-chain transparency.</p>
         </footer>
     </div>
 
@@ -982,39 +957,19 @@
             panel.classList.toggle('active');
         }
 
-        // Mock Contract Function for pre-launch trust
-        function copyContractMock() {
-            alert("Transparency Note: The verified smart contract address will be published simultaneously here exactly at launch to prevent front-running bots and protect our family.");
+        // Copy Contract Address Logic
+        function copyContractAddress() {
+            const contractText = "GoJzbzRYesEShx2kQhDxqq44huiieAz2P9wqoywhpump";
+            navigator.clipboard.writeText(contractText).then(() => {
+                const toast = document.getElementById('copyToast');
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            }).catch(err => {
+                console.error("Failed to copy text: ", err);
+            });
         }
-
-        // 5 Days Countdown Logic
-        const targetDate = new Date();
-        targetDate.setDate(targetDate.getDate() + 5);
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const difference = targetDate - now;
-
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
-            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
-            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
-            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
-
-            document.getElementById('top-bar-days').innerText = `${days} DAYS LEFT`;
-
-            if (difference < 0) {
-                clearInterval(interval);
-                document.querySelector('.countdown').innerHTML = "<h3 style='color:var(--gold-primary); grid-column: 1/-1; font-family:Cinzel; padding: 20px;'>SINXA ECOSYSTEM IS LIVE!</h3>";
-            }
-        }
-
-        const interval = setInterval(updateCountdown, 1000);
-        updateCountdown();
     </script>
 </body>
 </html>
